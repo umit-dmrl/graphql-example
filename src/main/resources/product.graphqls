@@ -1,0 +1,22 @@
+type Product {
+    id: ID!,
+    title: String,
+    description: String,
+    stock: Int
+}
+
+input ProductDto {
+    title: String!,
+    description: String,
+    stock: Int
+}
+
+type Query {
+    getAllProducts:[Product]
+    getProducts(type: String):[Product]
+    getProduct(id: ID):Product
+}
+
+type Mutation {
+    createProduct(product: ProductDto):Product
+}
